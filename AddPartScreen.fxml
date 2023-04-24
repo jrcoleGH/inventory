@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="726.0" prefWidth="600.0" style="-fx-background-color: lavenderblush;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="jenncoleinventory.view_controller.AddPartScreenController">
+   <children>
+      <Label fx:id="partScreenLabel" layoutX="42.0" layoutY="58.0" text="Add Part" textFill="#400820">
+         <font>
+            <Font name="System Bold" size="20.0" />
+         </font>
+      </Label>
+      <HBox layoutX="232.0" layoutY="58.0" spacing="40.0">
+         <children>
+            <RadioButton fx:id="inHouseRadio" mnemonicParsing="false" onAction="#inHouseHandler" selected="true" text="In-House">
+               <toggleGroup>
+                  <ToggleGroup fx:id="inOut" />
+               </toggleGroup>
+            </RadioButton>
+            <RadioButton fx:id="outSourcedRadio" mnemonicParsing="false" onAction="#outSourcedHandler" text="Outsourced" toggleGroup="$inOut" />
+         </children>
+      </HBox>
+    <AnchorPane layoutX="69.0" layoutY="172.0" minHeight="0.0" minWidth="0.0" prefHeight="428.0" prefWidth="459.0" style="-fx-background-color: thistle; -fx-background-radius: 9; -fx-border-radius: 9; -fx-border-color: grey;">
+         <children>
+            <TextField fx:id="partIDText" disable="true" layoutX="135.0" layoutY="20.0" style="-fx-background-radius: 5; -fx-border-radius: 5; -fx-border-color: lightgrey;" />
+            <TextField fx:id="partNameText" layoutX="135.0" layoutY="91.0" style="-fx-background-radius: 5; -fx-border-radius: 5; -fx-border-color: lightgrey;" />
+            <TextField fx:id="partInvText" layoutX="135.0" layoutY="161.0" style="-fx-border-color: lightgrey; -fx-background-radius: 5; -fx-border-radius: 5;" />
+            <TextField fx:id="partPriceText" layoutX="135.0" layoutY="229.0" style="-fx-border-color: lightgrey; -fx-border-radius: 5; -fx-background-radius: 5;" />
+            <TextField fx:id="partMaxText" layoutX="135.0" layoutY="297.0" prefHeight="33.0" prefWidth="105.0" style="-fx-background-radius: 5; -fx-border-radius: 5; -fx-border-color: lightgrey;" />
+            <TextField fx:id="partMinText" layoutX="324.0" layoutY="298.0" prefHeight="31.0" prefWidth="105.0" style="-fx-background-radius: 5; -fx-border-radius: 5; -fx-border-color: 5;" />
+            <TextField fx:id="partLastText" layoutX="135.0" layoutY="369.0" style="-fx-background-radius: 5; -fx-border-radius: 5; -fx-border-color: lightgrey;" />
+            <VBox layoutX="18.0" layoutY="20.0" prefHeight="376.0" prefWidth="130.0" spacing="50.0">
+               <children>
+                  <Label fx:id="partID" text="ID">
+                     <font>
+                        <Font name="System Bold" size="15.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="partName" text="Name">
+                     <font>
+                        <Font name="System Bold" size="15.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="partInv" text="Inv">
+                     <font>
+                        <Font name="System Bold" size="15.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="partPrice" text="Price">
+                     <font>
+                        <Font name="System Bold" size="15.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="partMax" text="Max">
+                     <font>
+                        <Font name="System Bold" size="15.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="partLastLabel" text="Machine ID">
+                     <font>
+                        <Font name="System Bold" size="15.0" />
+                     </font>
+                  </Label>
+               </children>
+            </VBox>
+            <Label fx:id="partMin" layoutX="266.0" layoutY="303.0" text="Min">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+      <HBox layoutX="335.0" layoutY="642.0" spacing="10.0">
+         <children>
+            <Button mnemonicParsing="false" onAction="#partSaveHandler" style="-fx-background-radius: 4;" text="Save" />
+            <Button mnemonicParsing="false" onAction="#partCancelHandler" style="-fx-background-radius: 4;" text="Cancel" />
+         </children>
+      </HBox>
+   </children>
+</AnchorPane>
